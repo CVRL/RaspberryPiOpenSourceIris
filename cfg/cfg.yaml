@@ -1,0 +1,71 @@
+#######################################################
+# Image capturing settings
+#######################################################
+left_illum_gpio_pin: 17
+right_illum_gpio_pin: 27
+image_save_dir: "/home/pi/Desktop/iris/captures"
+
+#######################################################
+# OSPAD_2D settings
+#######################################################
+modelDir: "/home/pi/Desktop/iris/PAD/Models/"
+bitSizes: [12,12,12,12,10,9,12]
+modelSizes: [22,15,11,17,17,5,7]
+modelTypes: ["svm","svm","svm","svm","svm","svm","svm"]
+segmentation: "bg"
+
+#######################################################
+# OSPAD_3D settings
+#######################################################
+tilt_left: [108.886, 81.52]
+tilt_right: [71.114, 98.482]
+slant: [15, 15]
+
+#######################################################
+# Recognition settings (BSIF)
+#######################################################
+rubbersheet_height: 64
+rubbersheet_width: 512
+recog_filter_size: 15
+recog_num_filters: 7
+recog_max_shift: 16
+recog_bsif_dir: "/home/pi/Desktop/iris/recognition/"
+
+#######################################################
+# Segmentation settings (Overall)
+#######################################################
+use_segnet: False
+use_unet: True
+use_osiris: False
+
+#######################################################
+# Segmentation settings (SegNet)
+#######################################################
+segnet_model_path: "/home/pi/Desktop/iris/segmentation/segnet-iris-coarse-dep.h5"
+avgimage_path: "/home/pi/Desktop/iris/segmentation/avg-coarse.npy"
+
+#######################################################
+# Segmentation settings (CC-Net)
+#######################################################
+unet_model_path: "/home/pi/Desktop/iris/segmentation/model_epoch_1500.pb"
+
+#######################################################
+# Segmentation settings (Circle fitting for SegNet & UNet)
+#######################################################
+iris_hough_param1: 30
+iris_hough_param2: 5
+iris_hough_lowermargin: 5
+iris_hough_uppermargin: 10
+pupil_hough_param1: 30
+pupil_hough_param2: 5
+pupil_hough_minimum: 13
+pupil_hough_margin: 10
+max_separation: 15
+
+#######################################################
+# Segmentation settings (OSIRIS)
+#######################################################
+imagelist_path: "/home/pi/Desktop/iris/OSIRIS_SEGM/segm"
+output_path: "/home/pi/Desktop/iris/OSIRIS_SEGM/outputs/"
+param_suffix: "_para.txt"
+mask_suffix: "_mask.bmp"
