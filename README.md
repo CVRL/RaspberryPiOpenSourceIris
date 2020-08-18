@@ -11,7 +11,7 @@ If you find this repository useful for your research, please consider citing our
 ```
 @article{fang2020osirishardsoft,
   title={Open Source Iris Recognition Hardware and Software with Presentation Attack Detection},
-  author={Zhaoyuan Fang},
+  author={Zhaoyuan Fang, Adam Czajka},
   journal={IEEE International Joint Conference on Biometrics (IJCB)},
   year={2020}
 }
@@ -23,3 +23,10 @@ Required libraries: PyTorch, TensorFlow, OpenCV
 
 ## The NDIris3D Dataset
 We are currently working on the release of this dataset.
+
+## Software
+
+### CC-Net Segmentation
+
+## Hardware Assembly Instructions
+
