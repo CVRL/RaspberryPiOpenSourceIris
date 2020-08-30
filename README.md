@@ -32,7 +32,8 @@ We are currently working on the release of this dataset.
 The iris recognition is adapted from [this paper](https://ieeexplore.ieee.org/abstract/document/8658238).
 
 ### OSPAD-2D and OSPAD-3D 
-All source codes of the PAD methods are in the PAD folder. 
+All source codes of the PAD methods are in the PAD folder. <br/>
+References to the PAD methods can be found here: [OSPAD-2D](https://arxiv.org/abs/1809.10172) and [OSPAD-3D](https://arxiv.org/abs/1811.07252).
 
 ### CC-Net Segmentation
 We apply [CC-Net](https://ieeexplore.ieee.org/abstract/document/8759448) for fast iris segmentation. All the codes are in the CCNet folder, as well as the segmentation model saved as a TensorFlow graph. Please check out CCNet/main.py for re-training / testing. The codes are straightforward to follow.
