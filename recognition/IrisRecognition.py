@@ -20,30 +20,30 @@ class IrisRecognition(object):
         for i in range(self.width):
             self.cos_angles[i] = np.cos(self.angles[i])
             self.sin_angles[i] = np.sin(self.angles[i])
-        
+
         self.filter_size = cfg["recog_filter_size"]
         self.num_filters = cfg["recog_num_filters"]
         self.max_shift = cfg["recog_max_shift"]
         self.filter = scipy.io.loadmat(cfg["recog_bsif_dir"]+'ICAtextureFilters_{0}x{1}_{2}bit.mat'.format(self.filter_size, self.filter_size, self.num_filters))['ICAtextureFilters']
         print("Initialized IrisRecognition")
-        
+
     # rubbersheet model for iris recognition
     def get_rubbersheet(self, image, cx, cy, pupil_r, iris_r):
         # Angle value
         rs = np.zeros((self.height, self.width), np.uint8)
-        
+
         for j in range(self.height):
             rad = j /self.height
-            
+
             x_lowers = cx + pupil_r * self.cos_angles
-            y_lowers = cx + pupil_r * self.sin_angles
+            y_lowers = cy + pupil_r * self.sin_angles
             x_uppers = cx + iris_r * self.cos_angles
             y_uppers = cy + iris_r * self.sin_angles
-            
+
             # Fill in the rubbersheet
             Xc = (1 - rad) * x_lowers + rad * x_uppers
             Yc = (1 - rad) * y_lowers + rad * y_uppers
-            
+
             rs[j, :] = image[Xc.astype(int), Yc.astype(int)]
 
         return rs
@@ -79,14 +79,14 @@ class IrisRecognition(object):
         self.code2 = code2[margin:-margin, :, :]
         self.mask1 = mask1[margin:-margin, :]
         self.mask2 = mask2[margin:-margin, :]
-        
+
         scoreC = np.zeros((self.num_filters, 2*self.max_shift+1))
         for shift in range(-self.max_shift, self.max_shift+1):
             andMasks = np.logical_and(self.mask1, np.roll(self.mask2, shift, axis=1))
             xorCodes = np.logical_xor(self.code1, np.roll(self.code2, shift, axis=1))
             xorCodesMasked = np.logical_and(xorCodes, np.tile(np.expand_dims(andMasks,axis=2),self.num_filters))
             scoreC[:,shift] = np.sum(xorCodesMasked, axis=(0,1)) / np.sum(andMasks)
-        
+
         scoreC = np.min(np.mean(scoreC, axis=0))
 
         return scoreC
