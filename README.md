@@ -41,8 +41,8 @@ We apply [CC-Net](https://ieeexplore.ieee.org/abstract/document/8759448) for fas
 ## Hardware Assembly Instructions
 The required components include: Raspberry Pi (tested on 3B+), NIR-sensitive Pi-compatible camera, NIR filter, NIR LEDs, resistors and wires. Some requirements on the hardware are:<br/>
 <ol>
-  <li/> The LEDs we used have emission wavelengths of 850nm, but any LED with emission wavelength between 700nm and 900nm would suffice.</li>
-  <li/> The NIR filter we used can be found [here](https://www.amazon.com/gp/product/B07RNH1HNX/), but any NIR filter that cuts effectively the light below 700nm would work well.</li>
+<li/> The LEDs we used have emission wavelengths of 850nm, but any LED with emission wavelength between 700nm and 900nm would suffice.</li>
+<li/> The NIR filter we used can be found here: https://www.amazon.com/gp/product/B07RNH1HNX/, but any NIR filter that cuts effectively the light below 700nm would work well.</li>
 </ol>
 
 The assembly steps are:<br/>
