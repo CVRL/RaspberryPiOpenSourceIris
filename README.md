@@ -24,7 +24,7 @@ The code is written and tested with Python 3.5 and Raspberry Pi 3B+. The softwar
 Required libraries: PyTorch, TensorFlow, OpenCV
 
 ## The NDIris3D Dataset
-We are currently working on the release of this dataset.
+We are currently working on the release of this dataset (NDIris3D). A similar dataset [Notre Dame Photometric Stereo Iris Dataset (Wacv 2019)](https://cvrl.nd.edu/projects/data/) is available and can be requested following instructions in the link.
 
 ## Software
 
