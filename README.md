@@ -19,12 +19,12 @@ If you find this repository useful for your research, please consider citing our
 }
 ```
 
+## The NDIris3D Dataset
+The [NDIris3D dataset](https://cvrl.nd.edu/projects/data/) is now available and can be requested following instructions in the link. Another similar dataset [Notre Dame Photometric Stereo Iris Dataset (Wacv 2019)](https://cvrl.nd.edu/projects/data/) is also available.
+
 ## Prerequisites
 The code is written and tested with Python 3.5 and Raspberry Pi 3B+. The software can also be treated as an individual open-source method.<br/>
 Required libraries: PyTorch, TensorFlow, OpenCV
-
-## The NDIris3D Dataset
-We are currently working on the release of this dataset (NDIris3D). A similar dataset [Notre Dame Photometric Stereo Iris Dataset (Wacv 2019)](https://cvrl.nd.edu/projects/data/) is available and can be requested following instructions in the link.
 
 ## Software
 
